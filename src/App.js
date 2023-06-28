@@ -1,10 +1,12 @@
 import { Fragment } from "react";
-import CartItems from "./components/CartItems/CartItems";
+import Cart from "./components/Cart/Cart";
+import ProductItems from "./components/Products/Products";
 
 const App = () => {
   return (
     <Fragment>
-      <CartItems />
+      <Cart/>
+      <ProductItems />
     </Fragment>
   );
 };
