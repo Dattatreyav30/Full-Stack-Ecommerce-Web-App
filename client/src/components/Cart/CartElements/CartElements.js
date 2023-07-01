@@ -4,7 +4,7 @@ import "./CartElements.css";
 import CartContext from "../../Store/CartContext/cart-context";
 import { useContext } from "react";
 
-const CartElements = (props) => {
+const CartElements = () => {
   const cartCtx = useContext(CartContext);
 
   const onClickRemoveItemHandler = (item, qty) => {
@@ -12,9 +12,6 @@ const CartElements = (props) => {
   };
   return (
     <div className="cart-elements">
-      <button className="cart-remove-button" onClick={props.onClose}>
-        Close
-      </button>
       <div className="cart-headings">
         <h3>ITEMS</h3>
         <h3>PRICE</h3>
@@ -31,7 +28,7 @@ const CartElements = (props) => {
                   src={item.imageUrl}
                 />
               </td>
-              <td>{item.title}</td>
+              <td className="cart-element-title">{item.title}</td>
               <td>Price - {item.price * item.quantity}$</td>
               <td>Qty - {item.quantity}</td>
               <td>

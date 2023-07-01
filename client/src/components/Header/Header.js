@@ -1,9 +1,11 @@
 import "./Header.css";
-import Cart from "../Cart/Cart";
-
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import CartContext from "../Store/CartContext/cart-context";
 
 const Header = () => {
+
+    const cartCtx = useContext(CartContext)
   return (
     <div className="header-elements">
       <p>
@@ -22,11 +24,13 @@ const Header = () => {
         </Link>
       </p>
       <p>
-        <Link to="Contact" className="header-element">
+        <Link to="/" className="header-element">
           Contact
         </Link>
       </p>
-      <Cart />
+      <Link to="/Cart" className="header-element">
+        Cart - {cartCtx.items.length}
+      </Link>
     </div>
   );
 };

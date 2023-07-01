@@ -4,15 +4,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./components/Header/About/About";
 import Home from "./components/Header/Home/Home";
+import CartElements from "./components/Cart/CartElements/CartElements";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <CartProvider>
+      <>
         <Header />
         <ProductItems />
-      </CartProvider>
+      </>
     ),
   },
   {
@@ -32,10 +33,22 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/Cart",
+    element: (
+      <>
+        <Header /> <CartElements />
+      </>
+    ),
+  },
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 };
 
 export default App;

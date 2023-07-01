@@ -7,10 +7,11 @@
   color: white;
 }
 
+
 .item-details {
   margin: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin-top: 10px;
 }
@@ -29,6 +30,9 @@
   width: 263px;
   height: 252px;
 }
+.item-price{
+  font-size: x-large ;
+}
 Button {
-  margin-left: 56px;
+  margin-left: 30px;
 }
