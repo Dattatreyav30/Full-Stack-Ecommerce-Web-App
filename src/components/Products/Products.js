@@ -46,10 +46,10 @@ const ProductItems = () => {
         return (
           <div>
             <h2 className="item-title">{item.title}</h2>
-            <img alt="item" src={item.imageUrl} />
+            <img className="item-image" alt="item" src={item.imageUrl} />
             <div className="item-details">
               <div className="price-add-container">
-                <h3 className="item-price">{item.price}$</h3>
+                <h3 className="item-price">Price-{item.price}$</h3>
                 <Button
                   onClick={() => addItemHandler(item)}
                   className="add-button"

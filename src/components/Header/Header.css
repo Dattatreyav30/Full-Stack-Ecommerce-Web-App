@@ -1,0 +1,18 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.header-elements {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(6, 2, 255);
+  padding: 1rem;
+  color: white;
+  align-items: center;
+}
+
+.header-element {
+  color: white;
+}
+

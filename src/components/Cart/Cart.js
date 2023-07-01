@@ -10,7 +10,9 @@ const Cart = () => {
 
   const onClickEventHandler = () => {
     setIsValid(!isValid);
+
   };
+  
   return (
     <Fragment>
       <button className="CartButton" onClick={onClickEventHandler}>

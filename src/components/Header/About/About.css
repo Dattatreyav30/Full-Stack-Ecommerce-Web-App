@@ -1,0 +1,23 @@
+.about{
+    background-color: rgb(197, 197, 224);
+}
+
+.about h1{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.about-image {
+  position: relative;
+  margin-top: 2rem;
+  left: 39%;
+  width: 300px;
+  height: 300px;
+  border-radius: 83rem;
+}
+.about-paragraph{
+    margin: 2rem 15rem 0  15rem;
+    text-align: justify;
+    font-style: italic;
+    font-weight: 700;
+}

@@ -1,22 +1,36 @@
 import { useState } from "react";
 import CartContext from "./cart-context";
 
-const updateQtyHandler = (item, qty) => {};
-
 const CartProvider = (props) => {
+    
   const [items, setItems] = useState([]);
+
+  const mappingFunction = (prvItems, existingItem) => {
+    const updatedItems = prvItems.map((ele) => {
+      if (ele.id === existingItem.id) {
+        return { ...ele, quantity: ele.quantity + 1 };
+      }
+      return ele;
+    });
+    return updatedItems;
+  };
 
   const addItemHandler = (item) => {
     const existingItem = items.find((ele) => ele.id === item.id);
     if (existingItem) {
       setItems((prevItems) => {
-        return prevItems.map((ele) => {
-          return { ...ele, quantity: ele.quantity + 1 };
-        });
+        return mappingFunction(prevItems, existingItem);
       });
     } else {
-      return setItems([item, ...items]);
+      setItems((prevItems) => [{ ...item, quantity: 1 }, ...prevItems]);
     }
+  };
+
+  const updateQtyHandler = (item, qty) => {
+    const filiteredItems = items.filter((ele) => {
+      return item.id !== ele.id;
+    });
+    return setItems(filiteredItems, ...items);
   };
 
   const cartContext = {

@@ -4,12 +4,17 @@ import "./CartElements.css";
 import CartContext from "../../Store/CartContext/cart-context";
 import { useContext } from "react";
 
-
 const CartElements = (props) => {
-  const cartCtx = useContext(CartContext)
+  const cartCtx = useContext(CartContext);
+
+  const onClickRemoveItemHandler = (item, qty) => {
+    cartCtx.updateQty(item);
+  };
   return (
     <div className="cart-elements">
-     <button className="cart-remove-button" onClick={props.onClose}>Close</button>
+      <button className="cart-remove-button" onClick={props.onClose}>
+        Close
+      </button>
       <div className="cart-headings">
         <h3>ITEMS</h3>
         <h3>PRICE</h3>
@@ -30,7 +35,10 @@ const CartElements = (props) => {
               <td>Price - {item.price * item.quantity}$</td>
               <td>Qty - {item.quantity}</td>
               <td>
-                <Button value="Remove item" />
+                <Button
+                  value="Remove item"
+                  onClick={() => onClickRemoveItemHandler(item, item.quantity)}
+                />
               </td>
             </tr>
           </table>
