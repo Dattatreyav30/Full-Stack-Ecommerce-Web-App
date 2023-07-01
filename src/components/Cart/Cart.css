@@ -1,13 +1,16 @@
-.CartButton{
-    padding: 0.5rem;
-    width: 5rem;
-    color: white;
-    background-color: brown;
-    border-color: rgb(232, 28, 28);
-    border-radius: 7px;
-    cursor: pointer;
+.CartButton {
+  position: relative;
+  left: 93%;
+  padding: 0.5rem;
+  width: 5rem;
+  height: 40px;
+  color: white;
+  background-color: brown;
+  border: 1px solid black;
+  border-radius: 7px;
+  cursor: pointer;
 }
-.CartButton:hover{
-    background-color: rgb(67, 0, 0);
-    border-color: rgb(65, 3, 3);
+.CartButton:hover {
+  background-color: rgb(67, 0, 0);
+  border-color: rgb(65, 3, 3);
 }

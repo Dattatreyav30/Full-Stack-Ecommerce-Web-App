@@ -1,13 +1,12 @@
-import { Fragment } from "react";
 import Cart from "./components/Cart/Cart";
 import ProductItems from "./components/Products/Products";
-
+import CartProvider from "./components/Store/CartContext/CartProvider";
 const App = () => {
   return (
-    <Fragment>
-      <Cart/>
+    <CartProvider>
+      <Cart />
       <ProductItems />
-    </Fragment>
+    </CartProvider>
   );
 };
 

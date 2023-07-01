@@ -1,0 +1,25 @@
+.items {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+}
+
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px; 
+}
+
+.item-title{
+  text-align: center;
+}
+
+.price-add-container {
+  display: flex;
+  align-items: center;
+}
+
+.item-price {
+  margin-right: 182px; 
+}

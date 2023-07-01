@@ -1,44 +1,42 @@
-import { Fragment } from "react";
 import Button from "../../UI/Button";
 import "./CartElements.css";
 
-const cartItems = [
-  {
-    title: "Colors",
-    price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
-    quantity: 2,
-  },
-  {
-    title: "Black and white Colors",
-    price: 50,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
-    quantity: 3,
-  },
-  {
-    title: "Yellow and Black Colors",
-    price: 70,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
-    quantity: 1,
-  },
-];
-const CartElements = () => {
+import CartContext from "../../Store/CartContext/cart-context";
+import { useContext } from "react";
+
+
+const CartElements = (props) => {
+  const cartCtx = useContext(CartContext)
   return (
-    <Fragment>
-      <h3>ITEM</h3>
-      <h3>PRICE</h3>
-      <h3>QUANTITY</h3>
-      {cartItems.map((item) => {
+    <div className="cart-elements">
+     <button className="cart-remove-button" onClick={props.onClose}>Close</button>
+      <div className="cart-headings">
+        <h3>ITEMS</h3>
+        <h3>PRICE</h3>
+        <h3>QUANTITY</h3>
+      </div>
+      {cartCtx.items.map((item) => {
         return (
-          <div>
-            <img alt="item" src={item.imageUrl} />
-            <h4>{item.price * item.quantity}$</h4>
-            <h4>{item.quantity}</h4>
-            <Button value="Remove item" />
-          </div>
+          <table className="cart-table">
+            <tr key={Math.random()}>
+              <td className="table-data">
+                <img
+                  className="cart-list-image"
+                  alt="item"
+                  src={item.imageUrl}
+                />
+              </td>
+              <td>{item.title}</td>
+              <td>Price - {item.price * item.quantity}$</td>
+              <td>Qty - {item.quantity}</td>
+              <td>
+                <Button value="Remove item" />
+              </td>
+            </tr>
+          </table>
         );
       })}
-    </Fragment>
+    </div>
   );
 };
 

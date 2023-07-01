@@ -1,9 +1,12 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
+import CartContext from "../Store/CartContext/cart-context";
 import "./Cart.css";
 import CartElements from "./CartElements/CartElements";
 
 const Cart = () => {
   const [isValid, setIsValid] = useState(false);
+
+  const cartCtx = useContext(CartContext)
 
   const onClickEventHandler = () => {
     setIsValid(!isValid);
@@ -11,9 +14,9 @@ const Cart = () => {
   return (
     <Fragment>
       <button className="CartButton" onClick={onClickEventHandler}>
-        Cart
+        Cart - {cartCtx.items.length}
       </button>
-      {isValid && <CartElements />}
+      {isValid && <CartElements  onClose = {onClickEventHandler}/>}
     </Fragment>
   );
 };
