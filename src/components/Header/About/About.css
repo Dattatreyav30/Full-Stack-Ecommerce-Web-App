@@ -1,10 +1,11 @@
 .about{
-    background-color: rgb(197, 197, 224);
+    background-color: rgb(11, 11, 11);
+    margin-bottom: 0.5rem;
 }
 
 .about h1{
-    margin-top: 1rem;
     text-align: center;
+    color: white;
 }
 
 .about-image {
@@ -16,6 +17,7 @@
   border-radius: 83rem;
 }
 .about-paragraph{
+    color: white;
     margin: 2rem 15rem 0  15rem;
     text-align: justify;
     font-style: italic;

@@ -3,21 +3,35 @@ import CartProvider from "./components/Store/CartContext/CartProvider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./components/Header/Header";
 import About from "./components/Header/About/About";
+import Home from "./components/Header/Home/Home";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <CartProvider>
-        <Header/>
+        <Header />
         <ProductItems />
       </CartProvider>
     ),
   },
   {
-    path : '/About',
-    element : <About/>
-  }
+    path: "/About",
+    element: (
+      <>
+        <Header />
+        <About />
+      </>
+    ),
+  },
+  {
+    path: "/Home",
+    element: (
+      <>
+        <Header /> <Home />
+      </>
+    ),
+  },
 ]);
 
 const App = () => {

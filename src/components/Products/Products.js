@@ -5,31 +5,50 @@ import "./Products.css";
 const productsArr = [
   {
     id: 1,
-    title: "Colors",
+    title: "Persian",
     price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+    imageUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7xuossutvrUNzL9jmF_yzCZ7MOPvFUQhVTA&usqp=CAU",
     quantity: 2,
   },
   {
     id: 2,
-    title: "Colors",
+    title: "Siamese",
     price: 100,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+    imageUrl:
+      "https://cdn.pixabay.com/photo/2017/02/15/12/12/cat-2068462_1280.jpg",
     quantity: 2,
   },
   {
     id: 3,
-    title: "Black and white Colors",
+    title: "Maine Coon",
     price: 50,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+    imageUrl:
+      "https://www.awesomeinventions.com/wp-content/uploads/2015/12/lion-look-cat.jpg",
     quantity: 3,
   },
   {
     id: 4,
-    title: "Yellow and Black Colors",
+    title: "Bengal",
     price: 70,
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+    imageUrl: "https://static.boredpanda.com/blog/wp-content/uploads/2016/08/bengal-cat-spots-fur-thor-5.jpg",
     quantity: 1,
+  },
+  {
+    id: 5,
+    title: "Sphynx",
+    price: 120,
+    imageUrl:
+      "https://i0.wp.com/www.99inspiration.com/wp-content/uploads/2016/08/Thor-The-Cute-Bengal-Cat-With-Purrfectly-Fur-99.jpg?fit=605%2C587&ssl=1",
+    quantity: 4,
+  },
+  {
+    id: 6,
+    title: "Scottish Fold",
+    price: 80,
+    imageUrl:
+      "https://c4.wallpaperflare.com/wallpaper/932/993/66/cute-scottish-fold-cat-wallpaper-preview.jpg",
+    quantity: 2,
   },
 ];
 

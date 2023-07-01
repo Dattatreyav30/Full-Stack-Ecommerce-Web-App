@@ -14,5 +14,13 @@
 
 .header-element {
   color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
+.header-element:hover{
+    text-decoration: 900;
+    color: bisque;
+}
+  

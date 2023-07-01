@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
-  margin: 1rem;
   margin-bottom: 2rem;
+  background-color: black;
+  color: white;
 }
 
 .item-details {
@@ -16,6 +17,7 @@
 
 .item-title {
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .price-add-container {
@@ -23,7 +25,10 @@
   justify-content: flex-start;
   align-items: center;
 }
-
+.item-image{
+  width: 263px;
+  height: 252px;
+}
 Button {
   margin-left: 56px;
 }
