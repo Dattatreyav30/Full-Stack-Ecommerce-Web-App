@@ -5,8 +5,6 @@
     display: grid;
     grid-template-columns: auto  ;
     justify-content: space-around;
-    /* background-color: white;
-    color: black; */
     border: 1.5px solid black;
     border-radius: 10px;
     position: absolute;
@@ -19,8 +17,6 @@
 .cart-table{
     margin-top: 1rem;
     padding: 1rem;
-    margin: 6px;
-    border-top: 1px solid black;
     border-top: 1px solid white;
 }
 .cart-table tr td{
@@ -36,4 +32,7 @@
 .cart-element-title{
     font-size: large;
     font-weight: 900;
+} 
+.zeo-cart-item{
+    color: white;
 }

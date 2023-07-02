@@ -7,16 +7,8 @@
   color: white;
 }
 
-
-.item-details {
-  margin: 2rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 10px;
-}
-
 .item-title {
+  margin-top: 0.5rem;
   text-align: center;
   margin-bottom: 0.5rem;
 }
@@ -25,6 +17,8 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 .item-image{
   width: 263px;

@@ -6,7 +6,7 @@ const Home = () => {
         <h1>Hi Welcome To Kitty Ecommerce</h1>
         <img  className='header-image' alt='catCeo' src='https://img.freepik.com/premium-photo/beautiful-cat-photo-beautiful-cat-cute-cat-cat-picpet_860112-7.jpg?w=2000'></img>
     </header>
-    <h1 className='happy-heading'>Some Of Our Happy Owners</h1>
+    <h1 className='happy-heading'>Some Of Our Happy Customers</h1>
       <table className="cat-show-table">
         <thead>
           <tr>
