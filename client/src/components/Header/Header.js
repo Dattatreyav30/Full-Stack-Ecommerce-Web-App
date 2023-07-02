@@ -4,8 +4,7 @@ import { useContext } from "react";
 import CartContext from "../Store/CartContext/cart-context";
 
 const Header = () => {
-
-    const cartCtx = useContext(CartContext)
+  const cartCtx = useContext(CartContext);
   return (
     <div className="header-elements">
       <p>
@@ -28,6 +27,9 @@ const Header = () => {
           Contact
         </Link>
       </p>
+      <Link to="/Admin" className="header-element">
+        Admin
+      </Link>
       <Link to="/Cart" className="header-element">
         Cart - {cartCtx.items.length}
       </Link>

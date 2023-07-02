@@ -1,0 +1,33 @@
+.admin-form{
+    position: relative;
+    margin: 2rem 18rem 2rem 18rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+.form-input{
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    width: 90%;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+}
+
+.admin-form-heading{
+    text-align: center;
+}
+.admin-form-button{
+    margin-left: 19rem;
+    width: 5rem;
+    padding: 0.5rem;
+    color: white;
+    background-color: blue;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.admin-form-button:hover{
+    background-color: rgb(86, 86, 212);
+}
