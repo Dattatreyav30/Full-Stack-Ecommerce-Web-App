@@ -1,4 +1,3 @@
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ProductItems from "./components/Products/Products";
 import CartProvider from "./components/Store/CartContext/CartProvider";
@@ -7,6 +6,7 @@ import About from "./components/Header/About/About";
 import Home from "./components/Header/Home/Home";
 import CartElements from "./components/Cart/CartElements/CartElements";
 import AdminForm from "./components/Header/Admin/AdminForm/AdminForm";
+import Contact from "./components/Header/Contact/Contact";
 
 const router = createBrowserRouter([
   {
@@ -44,14 +44,23 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path : "/Admin",
-    element : (
+    path: "/Admin",
+    element: (
       <>
-      <Header /> 
-      <AdminForm/>
+        <Header />
+        <AdminForm />
       </>
-    )
-  }
+    ),
+  },
+  {
+    path: "/Contact",
+    element: (
+      <>
+        <Header />
+        <Contact />
+      </>
+    ),
+  },
 ]);
 
 const App = () => {

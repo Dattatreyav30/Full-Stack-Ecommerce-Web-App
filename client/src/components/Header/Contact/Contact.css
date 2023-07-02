@@ -1,0 +1,20 @@
+.contact {
+  position: relative;
+  margin: 6rem 18rem 2rem 18rem;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+.contact-heading {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.contact-ul li {
+  list-style-type: none;
+  padding: 0.5rem;
+  font-weight: 900;
+}
+.contact-paragraph {
+  padding: 0.5rem;
+  font-weight: 900;
+}

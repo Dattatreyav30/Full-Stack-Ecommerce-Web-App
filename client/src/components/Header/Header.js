@@ -23,7 +23,7 @@ const Header = () => {
         </Link>
       </p>
       <p>
-        <Link to="/" className="header-element">
+        <Link to="/Contact" className="header-element">
           Contact
         </Link>
       </p>
