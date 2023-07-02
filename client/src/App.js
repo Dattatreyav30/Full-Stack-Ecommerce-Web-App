@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import About from "./components/Header/About/About";
 import Home from "./components/Header/Home/Home";
 import CartElements from "./components/Cart/CartElements/CartElements";
-import AdminForm from "./components/Header/Admin/AdminForm";
+import AdminForm from "./components/Header/Admin/AdminForm/AdminForm";
 
 const router = createBrowserRouter([
   {

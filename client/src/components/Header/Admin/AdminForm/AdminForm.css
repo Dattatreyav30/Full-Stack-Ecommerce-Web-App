@@ -2,7 +2,7 @@
     position: relative;
     margin: 2rem 18rem 2rem 18rem;
     padding: 0.5rem;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 1rem;
 }
 .form-input{
@@ -12,7 +12,7 @@
     width: 90%;
     margin: 2rem;
     border-radius: 0.5rem;
-    border: 1px solid black;
+    border: 1.5px solid rgb(84, 80, 80);
 }
 
 .admin-form-heading{

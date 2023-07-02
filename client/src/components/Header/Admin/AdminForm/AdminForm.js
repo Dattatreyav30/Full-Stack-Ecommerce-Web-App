@@ -46,7 +46,7 @@ const AdminForm = () => {
         value={formData.title}
         onChange={onChangeTitleHandler}
         className="form-input"
-        text="text"
+        type="text"
         name="title"
         placeholder="Title"
         required
@@ -55,7 +55,7 @@ const AdminForm = () => {
         value={formData.imageUrl}
         onChange={onChnageUrlHandler}
         className="form-input"
-        text="text"
+        type="text"
         name="imageUrl"
         placeholder="imageUrl"
         required
@@ -64,7 +64,7 @@ const AdminForm = () => {
         value={formData.price}
         onChange={onChangePriceHandler}
         className="form-input"
-        text="number"
+        type="number"
         name="price"
         placeholder="price"
         required
@@ -73,8 +73,8 @@ const AdminForm = () => {
         value={formData.quantity}
         onChange={onChangeQtyHandler}
         className="form-input"
-        text="number"
-        name="Qty"
+        type="number"
+        name="Qty"  
         placeholder="Qty"
         required
       />
