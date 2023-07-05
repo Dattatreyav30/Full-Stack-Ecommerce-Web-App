@@ -1,7 +1,7 @@
 const Items = require("../Models/itemsModel");
 
 exports.postProducts = async (req, res, next) => {
-  console.log(req.body)
+  console.log(req.body);
   const title = req.body.title;
   const imageUrl = req.body.imageUrl;
   const price = req.body.price;
@@ -11,11 +11,11 @@ exports.postProducts = async (req, res, next) => {
       title: title,
       imageUrl: imageUrl,
       price: price,
-      quantity : quantity
+      quantity: quantity,
     });
-    res.status(200).json({ message: "product added succesfully" });
+    res.tatus(200).json({ message: "product added succesfully" });
   } catch (err) {
-    console.log(err)
+    console.log(err);
     res.status(500).json({ message: "Error While Adding Product" });
   }
 };
@@ -28,5 +28,17 @@ exports.getProducts = async (req, res, next) => {
     return res.status(200).json({ products: products });
   } catch (err) {
     res.status(500).json({ message: "Something went wrong" });
+  }
+};
+
+exports.getProductDetails = async (req, res, next) => {
+  try {
+    let productId = req.params.id;
+    const product = await Items.findOne({
+      where: { id: productId },
+    });
+    res.status(200).json({ product: product });
+  } catch (err) {
+    res.status(500).json({ message: "error occured while fetching data" });
   }
 };

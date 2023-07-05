@@ -12,11 +12,13 @@ const CartElements = () => {
   };
   return (
     <div className="cart-elements">
-      <div className="cart-headings">
-        <h3>ITEMS</h3>
-        <h3>PRICE</h3>
-        <h3>QUANTITY</h3>
-      </div>
+      {cartCtx.items.length > 0 && (
+        <div className="cart-headings">
+          <h3>ITEMS</h3>
+          <h3>PRICE</h3>
+          <h3>QUANTITY</h3>
+        </div>
+      )}
       {cartCtx.items.map((item) => {
         return (
           <table className="cart-table">

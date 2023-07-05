@@ -1,11 +1,10 @@
 .cart-elements{
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 1rem;
     display: grid;
     grid-template-columns: auto  ;
     justify-content: space-around;
-    border: 1.5px solid black;
     border-radius: 10px;
     position: absolute;
 }
@@ -17,12 +16,13 @@
 .cart-table{
     margin-top: 1rem;
     padding: 1rem;
-    border-top: 1px solid white;
 }
 .cart-table tr td{
     width: 37vw;
     padding: 1rem;
-    border-right: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-right: 1rem;
 }
 
 .cart-headings{
@@ -33,6 +33,6 @@
     font-size: large;
     font-weight: 900;
 } 
-.zeo-cart-item{
+.zero-cart-item{
     color: white;
 }

@@ -1,15 +1,16 @@
 .items {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto auto auto ;
   justify-content: space-around;
   margin-bottom: 2rem;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .item-title {
   margin-top: 0.5rem;
   text-align: center;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
 
@@ -21,8 +22,10 @@
   margin-bottom: 2rem;
 }
 .item-image{
-  width: 263px;
-  height: 252px;
+  width: 230px;
+  height: 200px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 .item-price{
   font-size: x-large ;
@@ -33,4 +36,10 @@ Button {
 .loading-text{
   text-align: center;
   margin-top: 10vh;
+}
+.item{
+  border: 1px solid black;
+  margin  : 10px;
+  padding:1rem;
+  border-radius: 5px;
 }

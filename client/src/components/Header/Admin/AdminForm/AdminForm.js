@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./AdminForm.css";
 const AdminForm = () => {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     imageUrl: "",
@@ -35,6 +38,7 @@ const AdminForm = () => {
         body: JSON.stringify(formData),
       });
       setFormData({ title: "", imageUrl: "", price: "", quantity: "" });
+      navigate('/')
     } catch (err) {
       console.log(err);
     }
@@ -74,7 +78,7 @@ const AdminForm = () => {
         onChange={onChangeQtyHandler}
         className="form-input"
         type="number"
-        name="Qty"  
+        name="Qty"
         placeholder="Qty"
         required
       />

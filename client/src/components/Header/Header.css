@@ -21,6 +21,7 @@
 
 .header-element:hover{
     text-decoration: 900;
-    color: bisque;
+    color: rgb(248, 216, 176);
+    text-decoration:underline;
 }
   

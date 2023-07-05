@@ -1,13 +1,20 @@
 import { useContext, useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom";
 import CartContext from "../Store/CartContext/cart-context";
 import Button from "../UI/Button";
 import "./Products.css";
 
 const ProductItems = () => {
+  const navigate = useNavigate();
+  
   const cartCtx = useContext(CartContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const imgOnclickEventHandler = (id) => {
+    navigate(`/product-detail/${id}`)
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -42,9 +49,14 @@ const ProductItems = () => {
   return (
     <div className="items">
       {items.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} className="item">
           <h2 className="item-title">{item.title}</h2>
-          <img className="item-image" alt="item" src={item.imageUrl} />
+          <img
+            onClick={() => imgOnclickEventHandler(item.id)}
+            className="item-image"
+            alt="item"
+            src={item.imageUrl}
+          />
           <div className="price-add-container">
             <h3 className="item-price">Price - {item.price}$</h3>
             <Button

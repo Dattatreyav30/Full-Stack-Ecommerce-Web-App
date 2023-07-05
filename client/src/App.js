@@ -7,6 +7,7 @@ import Home from "./components/Header/Home/Home";
 import CartElements from "./components/Cart/CartElements/CartElements";
 import AdminForm from "./components/Header/Admin/AdminForm/AdminForm";
 import Contact from "./components/Header/Contact/Contact";
+import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,15 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path :'/product-detail/:id',
+    element : (
+      <>
+      <Header/>
+      <ProductDetails/>
+      </>
+    )
+  }
 ]);
 
 const App = () => {
