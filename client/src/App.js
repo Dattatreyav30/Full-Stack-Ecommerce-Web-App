@@ -9,6 +9,7 @@ import AdminForm from "./components/Header/Admin/AdminForm/AdminForm";
 import Contact from "./components/Header/Contact/Contact";
 import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
 import SignUp from "./components/User/Sighnup/SighnUp";
+import Login from "./components/User/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -80,12 +81,16 @@ const router = createBrowserRouter([
       </>
     ),
   },
+  {
+    path: "/user/login",
+    element: <Login />,
+  },
 ]);
 
 const App = () => {
   return (
     <CartProvider>
-      <RouterProvider router={router} /> 
+      <RouterProvider router={router} />
     </CartProvider>
   );
 };
