@@ -2,11 +2,12 @@ const express = require("express");
 
 const sequelize = require("./util/database");
 
-const itemRoute = require("./routes/itemRoute");
-
 const bodyParser = require("body-parser");
 
 const cors = require("cors");
+
+const itemRoute = require("./routes/itemRoute");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -21,6 +22,7 @@ app.use(
 );
 
 app.use(itemRoute);
+app.use("/user", userRoute);
 
 app.listen(5000, () => {
   console.log("port running on 5000");

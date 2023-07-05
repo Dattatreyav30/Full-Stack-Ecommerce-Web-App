@@ -8,6 +8,7 @@ import CartElements from "./components/Cart/CartElements/CartElements";
 import AdminForm from "./components/Header/Admin/AdminForm/AdminForm";
 import Contact from "./components/Header/Contact/Contact";
 import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
+import SignUp from "./components/User/Sighnup/SighnUp";
 
 const router = createBrowserRouter([
   {
@@ -63,20 +64,28 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path :'/product-detail/:id',
-    element : (
+    path: "/product-detail/:id",
+    element: (
       <>
-      <Header/>
-      <ProductDetails/>
+        <Header />
+        <ProductDetails />
       </>
-    )
-  }
+    ),
+  },
+  {
+    path: "/user/signup",
+    element: (
+      <>
+        <SignUp />
+      </>
+    ),
+  },
 ]);
 
 const App = () => {
   return (
     <CartProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router} /> 
     </CartProvider>
   );
 };

@@ -1,7 +1,9 @@
 .product-detail-image {
     position: sticky;
-    height: 100vh;
+    height: 80vh;
     width: 30vw;
+    margin: 1rem;
+    padding: 1rem;
   }
   
   .product-detail {

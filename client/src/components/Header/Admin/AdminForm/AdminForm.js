@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AdminForm.css";
+import Input from "../../../UI/Input";
 const AdminForm = () => {
   const navigate = useNavigate();
 
@@ -28,7 +28,6 @@ const AdminForm = () => {
   };
   const onSubmitEventHandler = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
       await fetch("http://localhost:5000/Add-product", {
         method: "POST",
@@ -38,7 +37,7 @@ const AdminForm = () => {
         body: JSON.stringify(formData),
       });
       setFormData({ title: "", imageUrl: "", price: "", quantity: "" });
-      navigate('/')
+      navigate("/");
     } catch (err) {
       console.log(err);
     }
@@ -46,7 +45,7 @@ const AdminForm = () => {
   return (
     <form className="admin-form" onSubmit={onSubmitEventHandler} method="POST">
       <h1 className="admin-form-heading">Add Product Form</h1>
-      <input
+      <Input
         value={formData.title}
         onChange={onChangeTitleHandler}
         className="form-input"
@@ -55,7 +54,7 @@ const AdminForm = () => {
         placeholder="Title"
         required
       />
-      <input
+      <Input
         value={formData.imageUrl}
         onChange={onChnageUrlHandler}
         className="form-input"
@@ -64,7 +63,7 @@ const AdminForm = () => {
         placeholder="imageUrl"
         required
       />
-      <input
+      <Input
         value={formData.price}
         onChange={onChangePriceHandler}
         className="form-input"
@@ -73,7 +72,7 @@ const AdminForm = () => {
         placeholder="price"
         required
       />
-      <input
+      <Input
         value={formData.quantity}
         onChange={onChangeQtyHandler}
         className="form-input"

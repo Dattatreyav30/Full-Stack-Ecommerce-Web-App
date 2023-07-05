@@ -22,7 +22,7 @@ const CartElements = () => {
       {cartCtx.items.map((item) => {
         return (
           <table className="cart-table">
-            <tr key={Math.random()}>
+            <tr key={item.id}>
               <td className="table-data">
                 <img
                   className="cart-list-image"

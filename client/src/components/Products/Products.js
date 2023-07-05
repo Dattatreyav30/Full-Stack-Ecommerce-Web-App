@@ -6,7 +6,7 @@ import "./Products.css";
 
 const ProductItems = () => {
   const navigate = useNavigate();
-  
+
   const cartCtx = useContext(CartContext);
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
