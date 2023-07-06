@@ -37,11 +37,23 @@ const CartProvider = (props) => {
     }
   };
 
-  const updateQtyHandler = (item, qty) => {
+  const updateQtyHandler = async (item) => {
     const filiteredItems = items.filter((ele) => {
       return item.id !== ele.id;
     });
-    return setItems(filiteredItems, ...items);
+    setItems(filiteredItems, ...items);
+
+    try {
+      await fetch(`http://localhost:5000/cart/remove-item/${item.id}`, {
+        method: "DELETE",
+        headers: {
+          authorization: localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const cartContext = {

@@ -14,7 +14,7 @@ exports.addItemTocart = async (req, res, next) => {
     if (existingCart) {
       return await Cart.update(
         {
-          quantity: quantity + 1,
+          quantity: existingCart.quantity + 1,
         },
         { where: { userId: req.user.id, id: id } }
       );
@@ -29,6 +29,20 @@ exports.addItemTocart = async (req, res, next) => {
     });
   } catch (err) {
     console.log(err);
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.removeIemFromCart = async (req, res, next) => {
+  try {
+    const id = req.params.id;
+    const cartItem = await Cart.findByPk(id);
+    if (!cartItem) {
+      throw new Error("item not found");
+    }
+    await Cart.destroy({ where: { id: id } });
+    res.status(200).json({ message: "Item removed from cart" });
+  } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };

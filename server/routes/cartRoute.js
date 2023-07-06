@@ -12,4 +12,10 @@ router.post(
   cartController.addItemTocart
 );
 
+router.delete(
+  "/remove-item/:id",
+  userAuth.userAuthorization,
+  cartController.removeIemFromCart
+);
+
 module.exports = router;
