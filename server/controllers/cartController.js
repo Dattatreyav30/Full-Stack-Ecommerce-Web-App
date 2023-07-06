@@ -46,3 +46,16 @@ exports.removeIemFromCart = async (req, res, next) => {
     res.status(500).json({ message: err.message });
   }
 };
+
+exports.fetchCartProducts = async (req, res, next) => {
+  try {
+    const cartProducts = await Cart.findAll({
+      where: {
+        userId: req.user.id,
+      },
+    });
+    res.status(200).json({ products: cartProducts });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};

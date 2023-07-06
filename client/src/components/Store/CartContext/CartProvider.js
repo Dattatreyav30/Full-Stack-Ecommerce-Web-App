@@ -1,8 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
   const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const asyncData = async () => {
+      const response = await fetch("http://localhost:5000/cart/cart-items", {
+        headers: {
+          authorization: localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+      });
+      const fetchData = await response.json();
+      setItems(fetchData.products);
+    };
+    asyncData();
+  }, []);
 
   const mappingFunction = (prvItems, existingItem) => {
     const updatedItems = prvItems.map((ele) => {
@@ -41,7 +55,7 @@ const CartProvider = (props) => {
     const filiteredItems = items.filter((ele) => {
       return item.id !== ele.id;
     });
-    setItems(filiteredItems, ...items);
+    setItems(filiteredItems);
 
     try {
       await fetch(`http://localhost:5000/cart/remove-item/${item.id}`, {

@@ -87,9 +87,9 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path : '/user/change-password',
-    element : <PassWordChange/>
-  }
+    path: "/user/change-password",
+    element: <PassWordChange />,
+  },
 ]);
 
 const App = () => {

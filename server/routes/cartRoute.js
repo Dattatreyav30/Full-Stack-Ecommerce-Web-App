@@ -18,4 +18,6 @@ router.delete(
   cartController.removeIemFromCart
 );
 
+router.get('/cart-items',userAuth.userAuthorization,cartController.fetchCartProducts)
+
 module.exports = router;
