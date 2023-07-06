@@ -4,7 +4,13 @@ import { useContext } from "react";
 import CartContext from "../Store/CartContext/cart-context";
 
 const Header = () => {
+  
   const cartCtx = useContext(CartContext);
+
+  const localStorageremover = () =>{
+    localStorage.removeItem("token");
+  }
+
   return (
     <div className="header-elements">
       <p>
@@ -33,7 +39,10 @@ const Header = () => {
       <Link to="/Cart" className="header-element">
         Cart - {cartCtx.items.length}
       </Link>
+      <Link to="/user/login" className="header-element" onClick={localStorageremover}>
+        Logout
+      </Link>
     </div>
   );
 };
-export default Header;     
+export default Header;
