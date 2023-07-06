@@ -26,12 +26,15 @@ const Login = () => {
       });
 
       const fetchData = await response.json();
+      if (fetchData.userId) {
+        localStorage.setItem("token", fetchData.userId);
+        setTimeout(() => {
+          localStorage.removeItem("token");
+        }, 15 * 60 * 1000);
+      }
       alert(fetchData.message);
       if (response.ok) {
         navigate("/");
-      }
-      if (!response.ok) {
-        navigate("/user/signup");
       }
     } catch (err) {
       alert(err.message);
