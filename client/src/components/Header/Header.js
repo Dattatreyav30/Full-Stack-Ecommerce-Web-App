@@ -1,15 +1,27 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import CartContext from "../Store/CartContext/cart-context";
 
 const Header = () => {
-  
   const cartCtx = useContext(CartContext);
+  const navigate = useNavigate();
 
-  const localStorageremover = () =>{
+  const onChnageHandler = (e) => {
+    e.preventDefault();
+    let selectedValue = e.target.value;
+
+    if (selectedValue === "logout") {
+      navigate("/user/login");
+      localStorageremover();
+    }
+    
+    if (selectedValue === "change-password") navigate("/user/change-password");
+  };
+
+  const localStorageremover = () => {
     localStorage.removeItem("token");
-  }
+  };
 
   return (
     <div className="header-elements">
@@ -39,9 +51,11 @@ const Header = () => {
       <Link to="/Cart" className="header-element">
         Cart - {cartCtx.items.length}
       </Link>
-      <Link to="/user/login" className="header-element" onClick={localStorageremover}>
-        Logout
-      </Link>
+      <select className="custom-dropdown" onChange={onChnageHandler}>
+        <option defaultValue="user">user</option>
+        <option value="logout">Logout</option>
+        <option value="change-password">change-password</option>
+      </select>
     </div>
   );
 };

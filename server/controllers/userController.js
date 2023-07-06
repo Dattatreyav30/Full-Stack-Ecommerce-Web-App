@@ -50,13 +50,29 @@ exports.getLoginDetails = async (req, res, next) => {
     if (!match) {
       throw new Error("Password is incorrect");
     }
-    res
-      .status(200)
-      .json({
-        message: "User logged in succesfully",
-        userId: generateAccessToken(userDetails.id),
-      });
+    res.status(200).json({
+      message: "User logged in succesfully",
+      userId: generateAccessToken(userDetails.id),
+    });
   } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+exports.changePassword = async (req, res, next) => {
+  try {
+    const { password } = req.body;
+    const hash = await bcrypt.hash(password, 5);
+    const user = await User.findByPk(req.user.id);
+    if (!user) {
+      res.status(401).json({ message: "usernot found" });
+    }
+    await user.update({
+      passWord: hash,
+    });
+    res.status(200).json({ message: "password updated succesfully" });
+  } catch (err) {
+    console.log(err);
     res.status(500).json({ message: err.message });
   }
 };

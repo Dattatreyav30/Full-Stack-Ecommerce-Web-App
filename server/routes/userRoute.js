@@ -2,10 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 
-const userController = require('../controllers/userController');
+const userAuth = require("../middleware/userAuth");
 
-router.post('/signup' , userController.userSignup);
+const userController = require("../controllers/userController");
 
-router.post('/login', userController.getLoginDetails);
- 
-module.exports  = router
+router.post("/signup", userController.userSignup);
+
+router.post("/login", userController.getLoginDetails);
+
+router.post("/change-password", userAuth.userAuthorization,userController.changePassword);
+
+module.exports = router;

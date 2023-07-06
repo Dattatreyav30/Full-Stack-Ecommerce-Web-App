@@ -10,6 +10,7 @@ import Contact from "./components/Header/Contact/Contact";
 import ProductDetails from "./components/Products/ProductDetails/ProductDetails";
 import SignUp from "./components/User/Sighnup/SighnUp";
 import Login from "./components/User/Login/Login";
+import PassWordChange from "./components/Header/Password/PasswordChange";
 
 const router = createBrowserRouter([
   {
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
     path: "/user/login",
     element: <Login />,
   },
+  {
+    path : '/user/change-password',
+    element : <PassWordChange/>
+  }
 ]);
 
 const App = () => {
