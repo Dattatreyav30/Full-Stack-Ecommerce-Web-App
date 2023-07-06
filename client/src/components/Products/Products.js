@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import CartContext from "../Store/CartContext/cart-context";
 import Button from "../UI/Button";
 import "./Products.css";
@@ -13,7 +13,7 @@ const ProductItems = () => {
   const [error, setError] = useState("");
 
   const imgOnclickEventHandler = (id) => {
-    navigate(`/product-detail/${id}`)
+    navigate(`/product-detail/${id}`);
   };
 
   useEffect(() => {

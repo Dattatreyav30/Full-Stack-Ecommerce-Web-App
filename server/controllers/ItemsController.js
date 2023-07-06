@@ -1,11 +1,7 @@
 const Items = require("../Models/itemsModel");
 
 exports.postProducts = async (req, res, next) => {
-  console.log(req.body);
-  const title = req.body.title;
-  const imageUrl = req.body.imageUrl;
-  const price = req.body.price;
-  const quantity = req.body.quantity;
+  const { title, imageUrl, price, quantity } = req.body;
   try {
     await Items.create({
       title: title,
