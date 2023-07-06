@@ -2,7 +2,6 @@ import { useState } from "react";
 import CartContext from "./cart-context";
 
 const CartProvider = (props) => {
-    
   const [items, setItems] = useState([]);
 
   const mappingFunction = (prvItems, existingItem) => {
@@ -15,7 +14,7 @@ const CartProvider = (props) => {
     return updatedItems;
   };
 
-  const addItemHandler = (item) => {
+  const addItemHandler = async (item) => {
     const existingItem = items.find((ele) => ele.id === item.id);
     if (existingItem) {
       setItems((prevItems) => {
@@ -23,6 +22,18 @@ const CartProvider = (props) => {
       });
     } else {
       setItems((prevItems) => [{ ...item, quantity: 1 }, ...prevItems]);
+    }
+    try {
+      await fetch("http://localhost:5000/cart/add-item", {
+        method: "POST",
+        headers: {
+          authorization: localStorage.getItem("token"),
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(item),
+      });
+    } catch (err) {
+      console.log(err);
     }
   };
 

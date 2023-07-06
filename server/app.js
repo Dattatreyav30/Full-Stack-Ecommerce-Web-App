@@ -6,9 +6,6 @@ const bodyParser = require("body-parser");
 
 const cors = require("cors");
 
-const itemRoute = require("./routes/itemRoute");
-const userRoute = require("./routes/userRoute");
-
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -21,8 +18,19 @@ app.use(
   })
 );
 
+const itemRoute = require("./routes/itemRoute");
+const userRoute = require("./routes/userRoute");
+const cartRoute = require("./routes/cartRoute");
+
 app.use(itemRoute);
 app.use("/user", userRoute);
+app.use("/cart",cartRoute);  
+
+const User = require("./Models/userModal");
+const Cart = require("./Models/cartModel");
+
+User.hasMany(Cart);
+Cart.belongsTo(User);
 
 app.listen(5000, () => {
   console.log("port running on 5000");
