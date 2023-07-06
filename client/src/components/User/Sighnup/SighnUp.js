@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../../UI/Input";
+import { Link } from "react-router-dom";
 const SignUp = () => {
   const [userSignup, setUserSignUp] = useState({
     email: "",
@@ -63,6 +64,17 @@ const SignUp = () => {
         className="form-input"
       />
       <button className="admin-form-button">submit</button>
+      <Link to="/user/login">
+        <p
+          style={{
+            textAlign: "end",
+            display: "inline-block",
+            marginLeft: "8rem",
+          }}
+        >
+          Existing user ? Login
+        </p>
+      </Link>
     </form>
   );
 };

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Input from "../../UI/Input";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -26,9 +27,13 @@ const Login = () => {
       });
 
       const fetchData = await response.json();
+      localStorage.setItem("token", fetchData.userId);
       alert(fetchData.message);
       if (response.ok) {
         navigate("/");
+      }
+      if (!response.ok) {
+        navigate("/user/signup");
       }
     } catch (err) {
       alert(err.message);
@@ -55,6 +60,17 @@ const Login = () => {
       <button className="admin-form-button" type="submit">
         Submit
       </button>
+      <Link to="/user/signup">
+        <p
+          style={{
+            textAlign: "end",
+            display: "inline-block",
+            marginLeft: "8rem",
+          }}
+        >
+          New user ? Signup
+        </p>
+      </Link>
     </form>
   );
 };
