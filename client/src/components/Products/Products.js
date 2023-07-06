@@ -38,6 +38,14 @@ const ProductItems = () => {
     cartCtx.addItem(item);
   };
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("please sign up first");
+      navigate("/user/signup");
+    }
+  }, [navigate]);
+
   if (isLoading) {
     return <h1 className="loading-text">Loading.....</h1>;
   }
