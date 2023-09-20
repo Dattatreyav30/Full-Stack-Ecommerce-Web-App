@@ -9,7 +9,7 @@ exports.postProducts = async (req, res, next) => {
       price: price,
       quantity: quantity,
     });
-    res.tatus(200).json({ message: "product added succesfully" });
+    res.status(200).json({ message: "product added succesfully" });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "Error While Adding Product" });
@@ -23,6 +23,7 @@ exports.getProducts = async (req, res, next) => {
     });
     return res.status(200).json({ products: products });
   } catch (err) {
+    console.log(err)
     res.status(500).json({ message: "Something went wrong" });
   }
 };

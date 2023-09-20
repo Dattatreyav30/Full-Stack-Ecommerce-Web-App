@@ -15,14 +15,13 @@ const Header = () => {
       navigate("/user/login");
       localStorageremover();
     }
-    
+
     if (selectedValue === "change-password") navigate("/user/change-password");
   };
 
   const localStorageremover = () => {
     localStorage.removeItem("token");
   };
-
   return (
     <div className="header-elements">
       <p>

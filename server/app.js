@@ -39,3 +39,4 @@ app.listen(5000, () => {
 sequelize.sync().then(() => {
   console.log("Database connected successfully");
 });
+  

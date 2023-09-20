@@ -21,7 +21,7 @@ const SignUp = () => {
     e.preventDefault();
     let fetchData;
     try {
-      const response = await fetch("http://localhost:5000/user/signup", {
+      const response = await fetch("/user/signup", {
         method: "POST",
         body: JSON.stringify(userSignup),
         headers: {
@@ -70,6 +70,7 @@ const SignUp = () => {
             textAlign: "end",
             display: "inline-block",
             marginLeft: "8rem",
+            fontWeight: 900,
           }}
         >
           Existing user ? Login

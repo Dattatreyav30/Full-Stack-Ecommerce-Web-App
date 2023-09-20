@@ -10,7 +10,7 @@ const ProductDetails = () => {
   useEffect(() => {
     try {
       const fetchProductDetails = async () => {
-        const response = await fetch(`http://localhost:5000/${params.id}`, {
+        const response = await fetch(`/${params.id}`, {
           method: "GET",
         });
         const fetchData = await response.json();

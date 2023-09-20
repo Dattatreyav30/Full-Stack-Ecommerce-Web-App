@@ -5,21 +5,30 @@ const CartProvider = (props) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const asyncData = async () => {
-      const response = await fetch("http://localhost:5000/cart/cart-items", {
+    fetchData();
+  }, [items.length]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch("/cart/cart-items", {
         headers: {
           authorization: localStorage.getItem("token"),
           "Content-Type": "application/json",
         },
       });
-      const fetchData = await response.json();
-      setItems(fetchData.products);
-    };
-    asyncData();
-  }, []);
+      if (response.ok) {
+        const fetchData = await response.json();
+        setItems(fetchData.products);
+      } else {
+        throw new Error("Failed to fetch cart items");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-  const mappingFunction = (prvItems, existingItem) => {
-    const updatedItems = prvItems.map((ele) => {
+  const mappingFunction = (prevItems, existingItem) => {
+    const updatedItems = prevItems.map((ele) => {
       if (ele.id === existingItem.id) {
         return { ...ele, quantity: ele.quantity + 1 };
       }
@@ -37,6 +46,7 @@ const CartProvider = (props) => {
     } else {
       setItems((prevItems) => [{ ...item, quantity: 1 }, ...prevItems]);
     }
+
     try {
       await fetch("http://localhost:5000/cart/add-item", {
         method: "POST",
@@ -52,10 +62,10 @@ const CartProvider = (props) => {
   };
 
   const updateQtyHandler = async (item) => {
-    const filiteredItems = items.filter((ele) => {
+    const filteredItems = items.filter((ele) => {
       return item.id !== ele.id;
     });
-    setItems(filiteredItems);
+    setItems(filteredItems);
 
     try {
       await fetch(`http://localhost:5000/cart/remove-item/${item.id}`, {

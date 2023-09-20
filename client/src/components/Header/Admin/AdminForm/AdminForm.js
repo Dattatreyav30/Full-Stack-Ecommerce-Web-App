@@ -29,7 +29,7 @@ const AdminForm = () => {
   const onSubmitEventHandler = async (e) => {
     e.preventDefault();
     try {
-      await fetch("http://localhost:5000/Add-product", {
+      await fetch("/Add-product", {
         method: "POST",
         headers: {
           "Content-Type": " application/json",

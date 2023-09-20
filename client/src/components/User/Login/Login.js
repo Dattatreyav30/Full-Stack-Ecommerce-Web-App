@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Input from "../../UI/Input";
 
 const Login = () => {
@@ -17,7 +18,7 @@ const Login = () => {
   const onSubmitEventHandler = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/user/login", {
+      const response = await fetch("/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,6 +69,18 @@ const Login = () => {
       <button className="admin-form-button" type="submit">
         Submit
       </button>
+      <Link to="/user/signup">
+        <p
+          style={{
+            textAlign: "end",
+            display: "inline-block",
+            marginLeft: "8rem",
+            fontWeight: 900,
+          }}
+        >
+          New user ? Signup
+        </p>
+      </Link>
     </form>
   );
 };

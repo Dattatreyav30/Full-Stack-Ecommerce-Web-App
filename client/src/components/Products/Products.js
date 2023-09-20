@@ -41,7 +41,6 @@ const ProductItems = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("please sign up first");
       navigate("/user/signup");
     }
   }, [navigate]);
